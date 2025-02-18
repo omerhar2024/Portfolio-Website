@@ -1,0 +1,9 @@
+/* Reduce the top spacing */
+main {
+  padding-top: 0.4rem;  /* Even smaller top padding */
+} 
+
+/* Add section spacing */
+section {
+  margin-bottom: 1.2rem;  /* Reduced vertical margin between sections */
+} 

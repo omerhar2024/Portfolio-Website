@@ -1,0 +1,97 @@
+.connect {
+  background: var(--color-primary);
+  color: var(--color-background);
+  padding: 4rem 2rem;
+  margin-top: 4rem;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: var(--font-size-h2);
+  margin-bottom: 1rem;
+}
+
+.content p {
+  color: var(--color-secondary);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.socials {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  color: var(--color-secondary);
+  transition: color var(--transition-hover),
+              transform var(--transition-hover);
+}
+
+.link:hover {
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.link svg {
+  width: 32px;
+  height: 32px;
+  transition: transform var(--transition-hover);
+}
+
+.link:hover svg {
+  transform: scale(1.15);
+}
+
+/* Platform-specific styling */
+.link[href*="linkedin"] {
+  color: #0A66C2;
+}
+
+.link[href*="github"] {
+  color: #171515;
+}
+
+.link[href*="mailto"] {
+  color: #EA4335;
+}
+
+.link[href*="linkedin"]:hover {
+  color: #0A66C2;
+}
+
+.link[href*="github"]:hover {
+  color: #171515;
+}
+
+.link[href*="mailto"]:hover {
+  color: #EA4335;
+}
+
+/* Hide the text, show only icons */
+.platform {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .socials {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .link {
+    width: 100%;
+    justify-content: center;
+  }
+} 

@@ -1,0 +1,7 @@
+export { default as Hero } from './Hero/Hero'
+export { default as ProjectGrid } from './ProjectGrid/ProjectGrid'
+export { default as ResumeAccordion } from './ResumeAccordion/ResumeAccordion'
+export { default as About } from './About/About'
+export { default as Projects } from './Projects/Projects'
+export { default as Connect } from './Connect/Connect'
+export { default as Navbar } from './Navbar/Navbar' 

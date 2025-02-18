@@ -1,0 +1,32 @@
+.main {
+  margin-top: 70px;
+  padding: 2rem 0;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.downloadSection {
+  text-align: center;
+  margin: 2rem 0 4rem;
+  padding: 0 2rem;
+}
+
+.downloadButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--color-accent);
+  color: var(--color-background);
+  border-radius: 4px;
+  font-weight: 500;
+  transition: transform var(--transition-hover),
+              background var(--transition-hover);
+}
+
+.downloadButton:hover {
+  transform: translateY(-2px);
+  background: var(--color-primary);
+} 

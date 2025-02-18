@@ -1,0 +1,48 @@
+@import 'variables.css';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (forced-colors: active) {
+  :root {
+    --color-primary: CanvasText;
+    --color-accent: LinkText;
+    --color-secondary: GrayText;
+    --color-text: CanvasText;
+    --color-background: Canvas;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+} 

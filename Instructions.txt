@@ -1,0 +1,225 @@
+Portfolio Implementation Guide
+Tech Stack Configuration
+text
+1. Framework: React + TypeScript (enable strict mode)
+2. Styling: CSS Modules with PostCSS (nesting support)
+3. Hosting: Vercel (SSR/ISR optimized)
+4. CI/CD: GitHub Actions (auto Lighthouse audits)
+5. Performance: Next.js 15 (App Router)
+Section 1: Hero Component (Dynamic Grid System)
+tsx
+// components/Hero.tsx
+export default function Hero() {
+  return (
+    <section className={styles.hero}>
+      <div className={styles.textColumn}>
+        <h1 data-aos="fade-right">Your Name</h1>
+        <h2 data-aos="fade-right" data-aos-delay="100">
+          Strategic Product Leader
+        </h2>
+        <p data-aos="fade-right" data-aos-delay="200">
+          Building user-centric products with measurable impact
+        </p>
+      </div>
+      
+      <ProjectGrid />
+    </section>
+  )
+}
+css
+/* Hero.module.css */
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.textColumn h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--color-primary);
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+Section 2: Smart Resume Accordion
+tsx
+// components/ResumeAccordion.tsx
+interface AccordionItem {
+  id: string
+  title: string
+  content: React.ReactNode
+}
+
+export default function ResumeAccordion({ items }: { items: AccordionItem[] }) {
+  return (
+    <div className={styles.accordion}>
+      {items.map((item) => (
+        <div key={item.id} className={styles.item}>
+          <button 
+            aria-expanded="false" 
+            aria-controls={`panel-${item.id}`}
+          >
+            {item.title}
+            <span aria-hidden="true">▾</span>
+          </button>
+          <div id={`panel-${item.id}`} className={styles.panel}>
+            {item.content}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+Section 3: Narrative About Section
+tsx
+// components/About.tsx
+export default function About() {
+  return (
+    <section className={styles.about}>
+      <div className={styles.profile}>
+        <Image 
+          src="/profile.jpg" 
+          alt="Professional headshot" 
+          width={400}
+          height={400}
+          priority
+        />
+      </div>
+      
+      <article className={styles.bio}>
+        <h2>My Product Philosophy</h2>
+        <div className={styles.timeline}>
+          {careerMilestones.map((milestone) => (
+            <div key={milestone.year} className={styles.milestone}>
+              <h3>{milestone.year}</h3>
+              <p>{milestone.description}</p>
+            </div>
+          ))}
+        </div>
+      </article>
+    </section>
+  )
+}
+Section 4: Project Showcase System
+tsx
+// components/Projects.tsx
+interface Project {
+  title: string
+  metrics: string[]
+  role: string
+  img: string
+}
+
+export default function Projects({ items }: { items: Project[] }) {
+  return (
+    <section className={styles.projects}>
+      <h2>Product Portfolio</h2>
+      <div className={styles.grid}>
+        {items.map((project) => (
+          <article key={project.title} className={styles.card}>
+            <Image 
+              src={project.img}
+              alt={project.title}
+              width={600}
+              height={400}
+              className={styles.image}
+            />
+            <div className={styles.content}>
+              <h3>{project.title}</h3>
+              <ul className={styles.metrics}>
+                {project.metrics.map((metric) => (
+                  <li key={metric}>{metric}</li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+Section 5: Smart Connect Module
+tsx
+// components/Connect.tsx
+const socials = [
+  { platform: 'LinkedIn', icon: <LinkedInIcon />, href: '#' },
+  { platform: 'GitHub', icon: <GitHubIcon />, href: '#' },
+  { platform: 'Email', icon: <EmailIcon />, href: 'mailto:you@example.com' }
+]
+
+export default function Connect() {
+  return (
+    <footer className={styles.connect}>
+      <h2 className="sr-only">Contact Information</h2>
+      <div className={styles.socials}>
+        {socials.map((social) => (
+          <a
+            key={social.platform}
+            href={social.href}
+            aria-label={social.platform}
+            className={styles.link}
+          >
+            {social.icon}
+          </a>
+        ))}
+      </div>
+    </footer>
+  )
+}
+Implementation Checklist
+text
+1. Color System:
+   - Primary: #2B2D42 (Dark Navy)
+   - Accent: #EF233C (Crimson)
+   - Secondary: #8D99AE (Blue-Gray)
+   - Text: #333333
+   - Background: #F8F9FA
+
+2. Typography Scale:
+   - Base: 1rem (16px)
+   - h1: clamp(2.5rem, 5vw, 4rem)
+   - h2: clamp(1.8rem, 3vw, 2.5rem)
+   - h3: clamp(1.4rem, 2.5vw, 1.8rem)
+
+3. Motion Guidelines:
+   - Entrance animations: 300ms ease-out
+   - Hover effects: 150ms ease-in
+   - Accordion transitions: 250ms cubic-bezier(0.4, 0, 0.2, 1)
+
+4. Accessibility Requirements:
+   - WCAG 2.1 AA compliance
+   - Forced colors fallback
+   - Reduced motion support
+   - Screen reader landmarks
+Cursor Prompt Initiation
+bash
+[ Execute in Cursor ]
+1. Create new Next.js 15 project with TypeScript
+2. Configure css/modules with PostCSS nesting
+3. Generate components/Hero.tsx with responsive grid
+4. Implement ResumeAccordion with ARIA states
+5. Build About section with timeline component
+6. Create Projects grid with metric cards
+7. Add Connect footer with social links
+8. Set up Vercel deployment config
+This blueprint incorporates:
+
+Fluid responsive layouts using CSS Grid + clamp()
+
+Performance-first image handling
+
+WCAG-compliant interactive elements
+
+Type-safe React components
+
+Modern CSS architecture
+
+Animated transitions
+
+SEO-optimized markup
+
+Would you like me to elaborate on any specific implementation details or generate the full CSS codebase?
