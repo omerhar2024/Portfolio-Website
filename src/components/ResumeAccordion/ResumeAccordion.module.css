@@ -145,7 +145,7 @@ details:nth-of-type(3) .skill {
   justify-content: center;
   gap: 0.15rem;
   width: 80px;
-  animation: moveAcross 25s linear infinite;
+  animation: moveAcross 8.75s linear infinite;
 }
 
 /* Stagger the initial positions */
