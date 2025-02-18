@@ -148,7 +148,7 @@ details:nth-of-type(3) .skill {
   animation: moveAcross 8.75s linear infinite;
 }
 
-/* Stagger the initial positions */
+/* Stagger the initial positions for desktop */
 details[open]:nth-of-type(3) .skill:nth-child(1) { left: -80%; }
 details[open]:nth-of-type(3) .skill:nth-child(2) { left: -70%; }
 details[open]:nth-of-type(3) .skill:nth-child(3) { left: -60%; }
@@ -199,6 +199,7 @@ details[open]:nth-of-type(3) .skill:nth-child(10) { left: 10%; }
   color: var(--color-primary);
 }
 
+/* Mobile styles */
 @media (max-width: 768px) {
   .resume {
     padding: 2rem 1rem;
@@ -212,6 +213,49 @@ details[open]:nth-of-type(3) .skill:nth-child(10) { left: 10%; }
   .skill {
     min-height: 60px;
     padding: 1rem;
+  }
+
+  /* Mobile adjustments for tools section */
+  details:nth-of-type(3) .skills {
+    height: auto;
+    overflow: visible;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  details:nth-of-type(3) .skill {
+    position: static;
+    width: 120px;
+    animation: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+  }
+
+  /* Remove all positioning for mobile */
+  details[open]:nth-of-type(3) .skill:nth-child(n) {
+    left: auto;
+    transform: none;
+  }
+
+  .toolImage {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 0.5rem;
+  }
+
+  .toolName {
+    font-size: 0.75rem;
+    text-align: center;
+    max-width: 100px;
+    line-height: 1.2;
+    word-break: keep-all;
+    white-space: nowrap;
   }
 }
 
@@ -228,6 +272,7 @@ details[open]:nth-of-type(3) .skill:nth-child(10) { left: 10%; }
   margin-bottom: 1rem;
   padding: 1rem 0;
   border-bottom: 2px solid var(--color-accent);
+  position: relative;
 }
 
 .header h2 {
@@ -301,4 +346,26 @@ details[open] .header h2::after {
 
 .details summary::-webkit-details-marker {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding-top: 3.5rem;
+  }
+
+  .header h2 {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .downloadButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .downloadButton:hover {
+    transform: translateY(-2px);
+  }
 } 
