@@ -109,6 +109,15 @@ details:nth-of-type(2) .skills .skill {
   font-weight: 500;
   font-size: 0.95rem;
   transition: all 0.3s ease;
+  background: var(--color-background);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+details:nth-of-type(2) .skills .skill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: var(--color-accent);
 }
 
 /* Specific styles for Tools section */

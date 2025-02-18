@@ -84,9 +84,9 @@ export default function ResumeAccordion() {
           <div className={styles.header}>
             <h2>Professional Experience</h2>
             <a 
-              href="/Resume_Omer Haroon.pdf" 
+              href="/resume.pdf" 
               className={styles.downloadButton}
-              download
+              download="Omer-Haroon-Resume.pdf"
               aria-label="Download Resume"
             >
               <FaRegFileAlt size={24} />
